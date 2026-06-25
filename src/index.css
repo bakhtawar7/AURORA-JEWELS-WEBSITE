@@ -1,0 +1,484 @@
+/* ===================================
+   AURORA JEWELS - Global Styles
+   index.css (class-based CSS)
+   =================================== */
+
+/* ---- Google Font Import ---- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ---- CSS Variables ---- */
+:root {
+  --rose-bg: #fdf5f0;
+  --rose-light: #f8eae0;
+  --rose-card: #fdf0eb;
+  --rose-border: #d9bfb7;
+  --rose-brown: #7b5e57;
+  --rose-medium: #a78c7b;
+  --rose-accent: #d9a38c;
+  --rose-hover: #c78a74;
+  --rose-dark: #5a3e37;
+  --text-main: #4a3630;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 12px rgba(123, 94, 87, 0.08);
+  --shadow-md: 0 8px 24px rgba(123, 94, 87, 0.12);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+/* ---- Base ---- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--rose-bg);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ---- Site Layout ---- */
+.site-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content { flex: 1; }
+
+/* ---- Navbar ---- */
+.navbar-custom {
+  background-color: var(--rose-light);
+  border-bottom: 1px solid var(--rose-border);
+  padding: 12px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--rose-brown) !important;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.nav-link-custom {
+  color: var(--rose-brown) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 6px 4px !important;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background-color: var(--rose-accent);
+  transition: width 0.3s;
+}
+
+.nav-link-custom:hover::after,
+.active-link::after { width: 100%; }
+
+.nav-link-custom:hover,
+.active-link { color: var(--rose-hover) !important; }
+
+.btn-register {
+  background-color: var(--rose-accent);
+  color: var(--white) !important;
+  border-radius: 20px;
+  padding: 6px 18px !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-register:hover {
+  background-color: var(--rose-hover);
+  transform: scale(1.03);
+  color: var(--white) !important;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  background-color: var(--rose-dark);
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 60px;
+}
+
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.footer-tagline { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 8px; }
+
+.footer-heading {
+  color: var(--rose-accent);
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-links li { margin-bottom: 8px; }
+.footer-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--rose-accent); }
+
+.footer-contact { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 2; }
+
+.footer-divider { border-color: rgba(255,255,255,0.1); margin: 0; }
+.footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.5); padding: 16px 0; }
+
+/* ---- Page Hero ---- */
+.page-hero {
+  background: linear-gradient(135deg, var(--rose-light) 0%, var(--rose-card) 100%);
+  border-bottom: 1px solid var(--rose-border);
+}
+
+.page-hero-title {
+  font-size: 2.8rem;
+  color: var(--rose-brown);
+  font-weight: 700;
+}
+
+.page-hero-sub { color: var(--rose-medium); font-size: 1.05rem; margin-top: 8px; }
+
+/* ---- Section Title ---- */
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--rose-brown);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ---- Hero Section ---- */
+.hero-section { position: relative; overflow: hidden; }
+
+.hero-banner {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(90, 62, 55, 0.65) 0%, transparent 60%);
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.hero-text { color: var(--white); max-width: 460px; }
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle { font-size: 1.1rem; margin-bottom: 28px; opacity: 0.92; }
+
+.btn-hero {
+  background-color: var(--rose-accent);
+  color: var(--white);
+  border: none;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-hero:hover { background-color: var(--rose-hover); transform: scale(1.04); color: var(--white); }
+
+/* ---- Background ---- */
+.bg-light-rose { background-color: var(--rose-light); }
+
+/* ---- Category Cards ---- */
+.category-card {
+  background-color: var(--rose-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+
+.category-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.category-card:hover .category-img { transform: scale(1.05); }
+
+.category-name {
+  color: var(--rose-brown);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* ---- Marquee ---- */
+.showcase-section { background-color: var(--rose-card); overflow: hidden; }
+
+.marquee-wrapper { overflow: hidden; width: 100%; }
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-track:hover { animation-play-state: paused; }
+
+.marquee-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- Product Card ---- */
+.product-card {
+  background-color: var(--rose-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+
+.product-img-wrap { overflow: hidden; }
+
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-img { transform: scale(1.06); }
+
+.product-info { padding: 14px; }
+
+.product-name { font-weight: 700; color: var(--rose-brown); margin-bottom: 4px; font-size: 0.95rem; }
+.product-price { color: var(--rose-accent); font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
+
+.btn-add-cart {
+  background-color: var(--rose-accent);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  padding: 7px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-add-cart:hover { background-color: var(--rose-hover); color: var(--white); }
+
+/* ---- About Snippet ---- */
+.about-snippet { background-color: var(--rose-light); }
+.about-text { color: var(--rose-medium); font-size: 1.05rem; max-width: 600px; margin: 0 auto 24px; }
+
+.btn-outline-custom {
+  border: 2px solid var(--rose-accent);
+  color: var(--rose-accent);
+  background: transparent;
+  padding: 10px 28px;
+  border-radius: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-outline-custom:hover { background-color: var(--rose-accent); color: var(--white); }
+
+/* ---- Newsletter ---- */
+.newsletter-section { background-color: var(--rose-light); }
+.newsletter-sub { color: var(--rose-medium); max-width: 500px; margin: 0 auto; }
+
+.newsletter-input {
+  max-width: 360px;
+  border-radius: 24px !important;
+  border: 1px solid var(--rose-border) !important;
+  padding: 10px 20px;
+}
+
+.newsletter-input:focus { border-color: var(--rose-accent) !important; box-shadow: 0 0 0 3px rgba(217,163,140,0.2) !important; }
+
+/* ---- Primary Button ---- */
+.btn-primary-custom {
+  background-color: var(--rose-accent);
+  color: var(--white);
+  border: none;
+  padding: 10px 28px;
+  border-radius: 24px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary-custom:hover { background-color: var(--rose-hover); color: var(--white); transform: scale(1.02); }
+
+/* ---- Filter Buttons (Shop) ---- */
+.btn-filter {
+  background-color: var(--rose-card);
+  border: 1px solid var(--rose-border);
+  color: var(--rose-brown);
+  border-radius: 20px;
+  padding: 8px 22px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+}
+
+.btn-filter:hover { border-color: var(--rose-accent); color: var(--rose-accent); }
+
+.btn-filter-active {
+  background-color: var(--rose-accent) !important;
+  border-color: var(--rose-accent) !important;
+  color: var(--white) !important;
+}
+
+/* ---- About Page ---- */
+.rounded-custom { border-radius: var(--radius); }
+
+.about-body { color: var(--rose-medium); font-size: 1rem; line-height: 1.8; margin-bottom: 16px; }
+
+.mission-section { background-color: var(--rose-light); }
+
+.value-card {
+  background-color: var(--rose-card);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.value-card:hover { transform: translateY(-5px); }
+
+.value-icon { font-size: 2.5rem; margin-bottom: 16px; }
+
+.value-card h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--rose-brown);
+  margin-bottom: 10px;
+}
+
+.value-card p { color: var(--rose-medium); font-size: 0.95rem; }
+
+.mission-card {
+  background-color: var(--rose-card);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  max-width: 700px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Collections Page ---- */
+.collection-img { max-height: 380px; object-fit: cover; width: 100%; }
+
+/* ---- Contact Page ---- */
+.contact-info-card {
+  background-color: var(--rose-card);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.contact-icon { font-size: 1.3rem; margin-top: 2px; }
+
+.contact-detail p { margin: 0; color: var(--rose-medium); font-size: 0.93rem; }
+.contact-detail strong { color: var(--rose-brown); display: block; margin-bottom: 2px; }
+
+/* ---- Form Card ---- */
+.form-card {
+  background-color: var(--rose-card);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.custom-input {
+  border: 1px solid var(--rose-border) !important;
+  border-radius: var(--radius-sm) !important;
+  background-color: #fff !important;
+  color: var(--text-main) !important;
+  padding: 10px 14px;
+}
+
+.custom-input:focus {
+  border-color: var(--rose-accent) !important;
+  box-shadow: 0 0 0 3px rgba(217, 163, 140, 0.2) !important;
+  outline: none;
+}
+
+/* ---- Registration ---- */
+.custom-radio,
+.custom-check { accent-color: var(--rose-accent); }
+
+.success-icon { font-size: 3rem; }
+
+.link-rose { color: var(--rose-accent); text-decoration: none; }
+.link-rose:hover { color: var(--rose-hover); text-decoration: underline; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .hero-overlay { padding: 0 24px; }
+  .hero-banner { max-height: 320px; }
+  .page-hero-title { font-size: 2rem; }
+  .section-title { font-size: 1.6rem; }
+  .form-card { padding: 24px; }
+}
+
+@media (max-width: 576px) {
+  .hero-title { font-size: 1.6rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .newsletter-input { max-width: 100%; }
+}
