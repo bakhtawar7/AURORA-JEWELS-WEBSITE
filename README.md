@@ -5,7 +5,7 @@ A modern jewelry storefront website built with React, Vite, and Bootstrap.
 
 ## 🛍️ About
 
-Aurora Jewels is a front-end web app for showcasing and browsing a jewelry collection — built as university project. It's a single-page application with client-side routing, giving it a fast, app-like feel as users move between pages.
+Aurora Jewels is a front-end web app for showcasing and browsing a jewelry collection built as university project. It's a single-page application with client-side routing, giving it a fast, app-like feel as users move between pages.
 
 ## 🛠️ Tech Stack
 
